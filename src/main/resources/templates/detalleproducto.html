@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
+<head>
+    <title>producto</title>
+    <link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="cssPry/registrarProducto.css" th:href ="@{/cssPry/registrarProducto.css}">
+
+</head>
+<body>
+
+        <div class="container pt-4 bg-dark">
+            <div class="card bg-dark">
+                <div class="col-12 admin bg-light pt-2">
+                    <h1 class="text-dark">DETALLE DEL PRODUCTO</h1>
+                </div>
+                <div class= "card-header bg-dark text-white text-center text-uppercase" th:text=${titulo}></div>
+                
+                <div class="row bg-light">
+                
+                <div class="col-6 pb-4">
+                <div class="card-body">
+                <img class="img-thumbnail rounded float-left border border-dark"
+                th:src="@{'/recursos/' + ${pp.foto}}"
+                th:alt="${pp.foto}"
+                style="max-width:80%;">
+                </div>
+                </div>
+                
+                <div class="row pt-4">
+                <ul class="list-group">
+                <li class="list-group-item" th:text="'Marca: ' + ${pp.Marca}"></li>
+                <li class="list-group-item" th:text="'Referencia del producto: ' + ${pp.refproducto}"></li>
+                <li class="list-group-item" th:text="'Color: ' + ${pp.Color}"></li>
+                <li class="list-group-item" th:text="'Descripcion: ' + ${pp.descripcion}"></li>
+                <li class="list-group-item" th:text="'Talla del producto: ' + ${pp.talla_producto}"></li>
+                </ul>
+                </div>
+                
+                </div>
+                
+                
+                
+                
+         
+    </div>
+    </div>
+     <div class="col-sm-20 pt-4" sec:authorize="hasRole('ROLE_ADMIN')">
+            <div class="modal-content pb-5">
+                <div class="col-12 admin">
+                    <h1>REGISTRAR ZAPATO</h1>
+                </div>
+
+                <form class="col-12" th:action="@{/zap}" th:object=${zz} method="POST" enctype="multipart/form-data">
+<div class="row">
+
+    <div class="col-lg-4 col-sm-6">
+                    <div class="form-group" id="marca-group">
+                    <input type="hidden" class="form-control" placeholder="&#10803;ID del zapato" name="id" required th:field="*{id}">
+                        <input type="number" class="form-control" placeholder="&#x1F45E;Cantidad de stock" name="cantidad" required th:field="*{cantidad}">
+                    </div></div>
+   <div class="col-lg-4 col-sm-6">
+                    <div class="form-group" id="marca-group">
+                        <input type="text" class="form-control" placeholder="&#x1F45E;estado" name="estado" required th:field="*{estado}">
+                    </div></div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+                    <div class="form-group" id="talla-group">
+                        <input type="text" class="form-control" placeholder="&#x2116;Nombre del Producto" name="nombre" required th:field="*{nombre}">
+                    </div></div>
+                    
+    <div class="col-lg-4">
+                    <div class="form-group" id="color-group">
+                        <input type="number" class="form-control" placeholder="&#x1F3A8;Precio Producto" name="precio" required th:field="*{precio}">
+                    </div>
+                </div> 
+                 
+	
+                    
+                    </div>
+                    
+            <div class="row pb-2">
+            <div class="col-lg-6 col-sm-6">
+                     <div class="form-group" id="canti-group">
+                  <select name="rol" required class="form-control"
+							th:field="*{categoria}">
+							<option value="">Seleccione el categoria</option>
+							<option value="1">Deportivo</option>
+							<option value="2">Formal</option>
+							<option value="3">Colegial</option>
+							<option value="4">Bota/botín</option>
+						</select>
+                  </div>
+                    </div>
+                    
+          <div class="col-lg-6 col-sm-6">
+                    <div class="form-group" id="canti-group">
+                      <input type="number" class="form-control" placeholder="&#10803;Referencia Producto" name="refproducto" maxlength="10" required th:field="*{producto}">
+                    </div></div>      
+                  
+
+                </div> 
+                <div class="row">
+                <div class="boton btn-block">
+                    <input class="registrate" type="submit" value="REGISTRAR">
+                    <input class="limpiar" type="reset" value="LIMPIAR">
+                </div>
+                </div>
+                
+                </form>
+    </div>
+    </div>
+ 
+
+
+<script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+  <script type="text/javascript" src="css/bootstrap.bundle.min.js" ></script>
+  <script src="js/popper.min.js"></script>
+</body>
+</html>

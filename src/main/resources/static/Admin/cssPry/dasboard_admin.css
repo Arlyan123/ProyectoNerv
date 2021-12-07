@@ -1,0 +1,106 @@
+.nav-item{
+	list-style: none;
+}
+
+i{
+	padding-right: 15px;
+}
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2px solid green;
+}
+.signIn{
+	padding-right: 5px; 
+}
+
+.navTitulo h1{
+
+	font-size: 24px;
+	border-bottom: 1px solid #1982C4;
+	padding-top: 20px;
+
+}
+.color3{
+  background-color: #073b4c;
+
+}
+#menu{
+  height: 100%;
+}
+.color2{
+	background-color: #FCF6BD;
+}
+.color16{
+	background-color: #D0F4DE;
+}
+.color17{
+	background-color: #A9DEF9;
+}
+.color24{
+	background-color: #80ED99;
+}
+.color6{
+	background-color: #fbc4ab;
+}
+.admin h1{
+  font-size: 24px;
+  color:white;
+  margin-bottom: 25px;
+}
+
+.main-section{
+    margin:0 auto;
+    margin-top:15%;
+    padding: 0;
+}
+
+.modal-content{
+    background-color:  #3b4652;
+    padding: 25px;  
+    width: 100%;
+  height: 100%;
+}
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    border:0;
+    padding-left: 8px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+label{
+  color: white;
+}
+.registrate{
+  width: 49%;
+  background:#222A3F;
+  color:white;
+  font-size: 16px;
+  font-weight: 700!important;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.558)
+}
+.limpiar{
+  width: 49%;
+   background:#222A3F;
+  color:white;
+  font-size: 16px;
+  font-weight: 700!important;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.558)
+}
+
+  main{
+  width: 98%;
+  height: 650px;
+ }
+ main iframe{
+  width: 100%;
+  height: 100%;
+ }

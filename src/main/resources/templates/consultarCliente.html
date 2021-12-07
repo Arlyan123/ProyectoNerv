@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css"/>
+
+    <link rel="stylesheet" href="css/all.css" th:href ="@{/css/all.css}">
+    <link rel="stylesheet" href="cssPry/registrarProducto.css"
+	th:href="@{/cssPry/registrarProducto.css}">
+
+  <title>Consultar clientes</title>
+</head>
+<body>  
+
+<div class="container-fluid pt-2">
+ <div class="row">
+                 <div class="col-lg-8 col-md-8 col-xs-12 pb-1">
+                     <h3>Cliente <a th:href="@{/Client}"><button class="btn btn-success btn-xs">Nuevo</button></a></h3>
+                 </div>
+             </div>
+<table id="example" class="table display">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Tipo de identificación</th>
+      <th scope="col">Identificación</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Nombre</th>     
+      <th scope="col">Apellido</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Localidad</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="Usuarios: ${userList}">
+    <th scope="row">
+      <a class="btn btn-info btn-xs"
+      th:href="@{detalles/}+${Usuarios.Id}" 
+      th:text="${Usuarios.Id}">
+      </a>
+      </th>
+      <td th:text="${Usuarios.Tipo_id}"></td>
+      <td th:text="${Usuarios.Numero}"></td>
+      <td th:text="${Usuarios.Username}"></td>
+      <td th:text="${Usuarios.Nombre}"></td>
+      <td th:text="${Usuarios.Apellido}"></td>
+      <td th:text="${Usuarios.Correo}"></td>
+      <td th:text="${Usuarios.Genero}"></td>
+      <td th:text="${Usuarios.Direccion}"></td>
+      <td th:text="${Usuarios.Localidad}"></td>
+      <td th:text="${Usuarios.Telefono}"></td>
+      <td th:text="${Usuarios.Edad}"></td>
+
+
+      <td>
+      <a th:href="@{/editar/}+${Usuarios.id}" class="btn btn-warning">Editar</a>
+      <a th:href="@{/delete/}+${Usuarios.id}"  class="btn btn-danger" onclick="return confirm('Esta seguro de eliminar el registro, recuerde que tiene que eliminar la relación entre cliente primero?');">Eliminar</a>
+      </td>
+
+
+    </tr>
+    
+
+  </tbody>
+
+</table></div>
+
+  <script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap.bundle.min.js" ></script>
+    <script src="js/popper.min.js"></script>
+            
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script> 
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+
+    <script type="text/javascript" src="datatable/JSZip-2.5.0/jszip.min.js"></script>
+
+    <script type="text/javascript" src="datatable/pdfmake-0.1.36/pdfmake.min.js"></script>
+
+    <script type="text/javascript" src="datatable/pdfmake-0.1.36/vfs_fonts.js"></script>
+
+      
+    <!-- extension responsive -->
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="Sweetalert/sweetalert.min.js" th:src ="@{/Sweetalert/sweetalert.min.js}"></script>
+
+<script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                responsive: true,
+                dom: 'Bfrtip',
+                buttons: [
+                'copy', 'excel', 'pdf'
+                ]
+
+
+
+            });
+        } );  
+    
+    </script>
+      
+      
+  </body>
+</html>

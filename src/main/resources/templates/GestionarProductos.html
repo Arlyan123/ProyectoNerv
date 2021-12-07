@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css"/>
+
+    <link rel="stylesheet" href="css/all.css" th:href ="@{/css/all.css}">
+
+  <title>Consultar Productos</title>
+</head>
+<body> 
+
+<div class="container-fluid pt-2">  
+ <div class="row">
+                 <div class="col-lg-8 col-md-8 col-xs-12">
+                     <h3>Producto <a th:href="@{/registrarProducto}" sec:authorize="hasRole('ROLE_ADMIN')"><button class="btn btn-success btn-xs" sec:autorize="hasRole('ROLE_ADMIN')">Nuevo</button></a></h3>
+                 </div>
+             </div>
+
+<table id="example" class="table display">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Ref</th>
+      <th scope="col">Color</th>
+      <th scope="col">Marca</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">Talla</th>
+      <th scope="col" sec:authorize="hasRole('ROLE_ADMIN')">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr th:each="Producto: ${productoList}">
+      <th scope="row" sec:authorize="hasRole('ROLE_ADMIN')">
+      <a class="btn btn-info btn-xs"
+      th:href="@{detalle/}+${Producto.Refproducto}" 
+      th:text="${Producto.Refproducto}">
+      </a>
+      </th>
+       <th scope="row" sec:authorize="hasRole('ROLE_USER')">
+      <a class="btn btn-info btn-xs"
+      th:href="@{detalle/}+${Producto.Refproducto}" 
+      th:text="${Producto.Refproducto}">
+      </a>
+      </th>
+      <td th:text="${Producto.Color}"></td>
+      <td th:text="${Producto.Marca}"></td>
+      <td th:text="${Producto.descripcion}"></td>
+      <td th:text="${Producto.Talla_producto}"></td>
+      <td sec:authorize="hasRole('ROLE_ADMIN')">
+      <a th:href="@{/editarp/}+${Producto.Refproducto}" class="btn btn-warning">Editar</a>
+      <a th:href="@{/eliminarp/}+${Producto.Refproducto} " class="btn btn-danger" onclick="return confirm('Esta seguro de eliminar el registro? Recuerde que tiene que eliminar la relación con zapato primero');">Eliminar</a>
+     </td>
+    </tr>
+   
+
+  </tbody>
+</table>
+</div>
+
+  <script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap.bundle.min.js" ></script>
+    <script src="js/popper.min.js"></script>
+            
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script> 
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+
+    <script type="text/javascript" src="datatable/JSZip-2.5.0/jszip.min.js"></script>
+
+    <script type="text/javascript" src="datatable/pdfmake-0.1.36/pdfmake.min.js"></script>
+
+    <script type="text/javascript" src="datatable/pdfmake-0.1.36/vfs_fonts.js"></script>
+
+      
+    <!-- extension responsive -->
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="Sweetalert/sweetalert.min.js" th:src ="@{/Sweetalert/sweetalert.min.js}"></script>
+      
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                responsive: true,
+                dom: 'Bfrtip',
+                buttons: [
+                'copy', 'excel', 'pdf'
+                ]
+
+
+
+            });
+        } );  
+    
+    </script>
+
+
+      
+  </body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="cssPry/Catalogos/mujer.css"
+	th:href="@{/cssPry/Catalogos/mujer.css}">
+<title>Zapatillas</title>
+</head>
+<body>
+	<div class="container-fluid">
+
+
+		<!-- Barra de NAV -->
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+					<a href="#" class="navbar-brand"></a><a href="/inicio" id="nerv"><img
+						src="img/logoo.png" style="width: 30%"></a>
+					<button type="button" class="navbar-toggler" data-toggle="collapse"
+						data-target="#menu">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse justify-content-center"
+						id="menu">
+						<ul class="navbar-nav">
+							<li class="nav-item"><a href="/inicio" class="nav-link">Inicio</a></li>
+							<li class="nav-item"><a href="#contactenos" class="nav-link">Contáctenos</a></li>
+
+							<li class="nav-item dropdown"><a href="#"
+								class="nav-link active dropdown-toggle" data-toggle="dropdown"
+								id="Lista">Buscar</a>
+								<div class="dropdown-menu">
+									<a href="#catalogo" class="dropdown-item">Catalogo</a> <a
+										href="/Hombre" class="dropdown-item">Hombre</a> <a
+										href="/Mujer" class="dropdown-item">Niño</a>
+									<form class="form-inline">
+										<input class="form-control" type="search" placeholder="Search"
+											aria-label="Search">
+									</form>
+								</div></li>
+						</ul>
+
+						<ul class="navbar-nav justify-content-md order-last">
+							<li sec:authorize="!isAuthenticated()" class="nav-item"><a
+								class="btn btn-outline-warning" th:href="@{/login}">Login</a></li>
+							<li class="dropdown" sec:authorize="isAuthenticated()"><a
+								class="btn btn-secondary dropdown-toggle" href="#" role="button"
+								id="dropdownMenuLink" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> <span
+									sec:authentication="name"></span>
+							</a>
+
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+									<a href="/Admin" sec:authorize="hasRole('ROLE_ADMIN')"
+										class="dropdown-item">Administrador</a> <a href="/Cliente"
+										sec:authorize="hasRole('ROLE_USER')" class="dropdown-item">Cliente</a>
+
+
+									<form th:action="@{/logout}" method="post">
+										<a class="dropdown-item" href="#"
+											onclick="this.parentNode.submit();">Cerrar Sesion</a>
+									</form>
+								</div></li>
+
+
+						</ul>
+					</div>
+
+
+				</nav>
+			</div>
+		</div>
+		<div id="c" class="col-12 text-center p-2 mb-2 color21">
+			<h2>Zapatillas</h2>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<!-- <> -->
+				<div id="imagen" class="carousel slide" data-ride="carousel">
+
+					<!-- -->
+					<ul class="carousel-indicators">
+						<li daa-target="imagen" data-slide-to="0" class="active"></li>
+						<li daa-target="imagen" data-slide-to="1"></li>
+						<li daa-target="imagen" data-slide-to="2"></li>
+						<li daa-target="imagen" data-slide-to="3"></li>
+					</ul>
+					<!--Imagenes-->
+					<div class="carousel-inner img-fluid">
+
+						<div class="carousel-item active">
+							<img src="img/Zapatillas/C.jpg" class="img-fluid">
+							<div class="carousel-caption">
+								<h3>Zapateria DiDi</h3>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<img src="img/Zapatillas/B.png" class="img-fluid">
+							<div class="carousel-caption">
+								<h3>Zapateria DiDi</h3>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<img src="img/Zapatillas/E.jpg" class="img-fluid">
+							<div class="carousel-caption">
+								<h3>Zapateria DiDi</h3>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<img src="img/Zapatillas/D.jpg" class="img-fluid">
+							<div class="carousel-caption">
+								<h3>Zapateria DiDi</h3>
+							</div>
+						</div>
+
+					</div>
+					<!--controles-->
+					<a href="#imagen" class="carousel-control-prev" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a> <a href="#imagen" class="carousel-control-next" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="catalogo" class="col-12 text-center p-2 mb-2 bg-dark">
+			<h2>Catálogo</h2>
+		</div>
+
+		<div class="navbar" id="contenido1">
+
+			<li class="nav-item dropdown"><a
+				class="list-group-item dropdown-toggle list-group-item-action border-warning"
+				href="#" data-toggle="dropdown">Hombre</a>
+				<div class="dropdown-menu">
+					<a href="/Hombre" class="dropdown-item">Hombre</a>
+				</div></li>
+
+			<li class="nav-item dropdown"><a
+				class="list-group-item dropdown-toggle list-group-item-action border-warning"
+				href="#" data-toggle="dropdown">Mujer</a>
+				<div class="dropdown-menu">
+					<a href="/Mujer" class="dropdown-item">Mujer</a>
+				</div></li>
+
+			<li class="nav-item dropdown"><a
+				class="list-group-item dropdown-toggle list-group-item-action border-warning"
+				href="#" data-toggle="dropdown">Niño/Niña</a>
+				<div class="dropdown-menu">
+					<a href="/child" class="dropdown-item">Niño/Niña</a>
+				</div></li>
+
+			<li class="nav-item dropdown"><a
+				class="list-group-item dropdown-toggle list-group-item-action border-warning"
+				href="#" data-toggle="dropdown">Calzado</a>
+				<div class="dropdown-menu">
+					<a href="/zapatillas" class="dropdown-item">Zapatillas</a> <a
+						href="/deportivo" class="dropdown-item">Deportivo</a> <a
+						href="/Formal" class="dropdown-item">Zapato formal</a> <a
+						href="/Botas" class="dropdown-item">Bota/Botin</a> <a
+						href="/colegial" class="dropdown-item">Zapato Colegial</a>
+				</div></li>
+		</div>
+
+		<div class="catalogo">
+
+			<section class="row p-4 justify-content-between">
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>REEBOK NEGRO</h2>
+						</div>
+						<img src="img/Zapatillas/1.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color negro</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>CUERO BLANCO</h2>
+						</div>
+						<img src="img/Zapatillas/9.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color blanco</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>CLASSIC REEBOK</h2>
+						</div>
+						<img src="img/Zapatillas/3.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodass</p>
+						</div>
+						<div class="card-footer">
+							<p>Color negro</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>ZAPATILLA A-Z</h2>
+						</div>
+						<img src="img/Zapatillas/4.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color marron claro</p>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+			<section class="row p-4 justify-content-between">
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>COLEGIAL ROJO</h2>
+						</div>
+						<img src="img/Zapatillas/5.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color rojo</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>NEGRO AUDAZ</h2>
+						</div>
+						<img src="img/Zapatillas/6.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color negro</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>COLORFULL</h2>
+						</div>
+						<img src="img/Zapatillas/7.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color multicolor</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card text-center border border-info">
+						<div class="card-header color21">
+							<h2>ZAPATILLA BLANCA</h2>
+						</div>
+						<img src="img/Zapatillas/8.jpg">
+						<div class="card-body">
+							<a data-target="#agenda" data-toggle="modal"
+								class="btn btn-warning mb-2">Comprar</a>
+							<p>Zapatillas comodas</p>
+						</div>
+						<div class="card-footer">
+							<p>Color blanco</p>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+		</div>
+	</div>
+
+	<article class="p-3">
+		<footer class="p-5 text-center text-white">Direccion -
+			Cll24A#24G46 - Correo: Didi2124@Gmail.com - Telefono: 3144859450
+			Diego Sneider Diaz Roa - Arley Sebastian Castillo</footer>
+	</article>
+
+	<div class="modal fade" id="agenda">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!--Encabezado -->
+				<div class="modal-header">
+					<h4>Advertencia</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!--Contenido -body- -->
+				<div class="modal-body">
+					<p>¡Alto! Primero tienes que hablarlo con el administrador</p>
+				</div>
+				<!--Pie modal -footer- -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="Sweetalert/sweetalert.min.js"></script>
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="css/bootstrap.bundle.min.js"></script>
+	<script src="js/popper.min.js"></script>
+</body>
+</html>

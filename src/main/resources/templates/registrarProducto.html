@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>registrar producto</title>
+<link rel="stylesheet" href="cssPry/registrarProducto.css"
+	th:href="@{/cssPry/registrarProducto.css}">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title th:text="${titulo}"></title>
+
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/bootstrap/dist/css/bootstrap.min.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/font-awesome/css/font-awesome.min.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/Ionicons/css/ionicons.min.css}">
+
+<link rel="stylesheet" href="cssPry/registrarProducto.css"
+	th:href="@{/cssPry/registrarProducto.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/dist/css/skins/_all-skins.min.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/morris.js/morris.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/jvectormap/jquery-jvectormap.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/bower_components/bootstrap-daterangepicker/daterangepicker.css}">
+
+<link rel="stylesheet"
+	th:href="@{/bootstrapHome/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css}">
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body>
+	<div class="row pt-4">
+
+		<div class="col-lg-12  modal-content">
+			<div class="col-12 admin">
+				<h1>REGISTRAR PRODUCTO</h1>
+			</div>
+
+			<form class="col-12 needs-validation" th:action="@{/pro}"
+				th:object=${pp} method="POST" enctype="multipart/form-data"
+				novalidate>
+				<div class="row">
+
+					<div class="col-lg-12">
+						<div class="form-group" id="id-group">
+							<input type="number" class="form-control"
+								placeholder="ID del Producto" name="id"
+								title="Ingresar id de producto" required
+								th:field="*{refproducto}">
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="form-group" id="marca-group">
+							<input type="text" class="form-control"
+								placeholder="Marca del Producto" name="marca"
+								title="Ingresar marca de producto" required th:field="*{marca}">
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="form-group" id="marca-group">
+							<input type="text" class="form-control" placeholder="descripcion"
+								name="descripcion" title="Ingresar descripción" required
+								th:field="*{descripcion}">
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="form-group" id="talla-group">
+							<input type="number" class="form-control"
+								placeholder="Talla del Producto" name="talls"
+								title="Ingresar talla de producto" required
+								th:field="*{talla_producto}">
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+
+					<div class="col-lg-12">
+						<div class="form-group" id="color-group">
+							<input type="text" class="form-control"
+								placeholder="Color Producto" name="color"
+								title="Ingresar color de producto" required th:field="*{color}">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="form-group" id="estadop-group">
+							<label for="file">FOTO DEL PRODUCTO</label> <input class="foto"
+								type="file" id="foto" title="Ingresar foto de producto"
+								name="file">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="boton btn-block">
+						<input class="registrate" type="submit" value="REGISTRAR">
+						<input class="limpiar" type="reset" value="LIMPIAR">
+					</div>
+				</div>
+			</form>
+		</div>
+
+
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/jquery/dist/jquery.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/jquery-ui/jquery-ui.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+
+	<script th:src="@{/bootstrap/assets/js/bootbox.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/raphael/raphael.min.js}"></script>
+	<script
+		th:src="@{/bootstrapHome/bower_components/morris.js/morris.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+	<script
+		th:src="@{/bootstrapHome/plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/jquery-knob/dist/jquery.knob.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/moment/min/moment.min.js}"></script>
+	<script
+		th:src="@{/bootstrapHome/bower_components/bootstrap-daterangepicker/daterangepicker.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/jquery-slimscroll/jquery.slimscroll.min.js}"></script>
+
+	<script
+		th:src="@{/bootstrapHome/bower_components/fastclick/lib/fastclick.js}"></script>
+
+	<script th:src="@{/bootstrapHome/dist/js/adminlte.min.js}"></script>
+
+	<script th:src="@{/bootstrapHome/dist/js/pages/dashboard.js}"></script>
+
+	<script th:src="@{/bootstrapHome/dist/js/demo.js}"></script>
+</body>
+</html>

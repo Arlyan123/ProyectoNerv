@@ -1,0 +1,159 @@
+.carousel> .carousel-inner> .carousel-item> img{
+	display: block;
+	width: 100%;
+	height: 600px;
+}
+.navbar{
+	border-bottom: 2px solid #0164cc;
+}
+
+.fixed-top{
+	top:0px;
+
+}
+
+#c{
+	margin-top: 9%;
+}
+
+
+
+.precio{
+	width: 10%;
+}
+.talla{
+	width: 10%;
+}
+.genero{
+	width: 10%;
+}
+..talla{
+	width: 10%;
+}
+.calzado{
+	width: 10%;
+}
+h2{
+	color: white;
+}
+.card img{
+	height: 350px;
+	width: 100%;
+}
+#scroll img{
+	width: 90%;
+	height: 90%;
+
+}
+#contenido1{
+	height: auto;
+	list-style:none
+}
+.navbar li{
+	width: 200px;
+}
+.catalogo{
+	width: 100%;
+}
+
+
+footer{
+	font-size: 20px;
+	width: 100%;
+	height: 150px;
+	float: left;
+	background-image: linear-gradient(99deg,#673ab7,#0164cc);
+}
+
+
+
+.color1{
+	background-color: #90e0ef;
+}
+.color2{
+	background-color: #00b4d8;
+}
+.color3{
+	background-color: #0096c7;
+}
+.color4{
+	background-color: #f4978e;
+}
+.color5{
+	background-color: #f8ad9d;
+}
+.color6{
+	background-color: #fbc4ab;
+}
+.color7{
+	background-color: #b185db;
+}
+.color8{
+	background-color: #a06cd5;
+}
+.color9{
+	background-color: #9163cb;
+}
+.colorr9{
+	background-color: #673ab7;
+}
+.color10{
+	background-color: #ffb600;
+}
+.color11{
+	background-color: #ff8500;
+}
+.color12{
+	background-color: #ff4800;
+}
+.color13{
+	background-color: grey;
+}
+.color14{
+	background-color: #FF99C8;
+}
+.color15{
+	background-color: #FCF6BD;
+}
+.color15{
+	background-color: #D0F4DE;
+}
+.color16{
+	background-color: #A9DEF9;
+}
+.color17{
+	background-color: #E4C1F9;
+}
+.color18{
+	background-color: #FF595E;
+}
+.color19{
+	background-color: #FFCA3A;
+}
+.color20{
+	background-color: #8AC926;
+}
+.color21{
+	background-color: #0164cc;
+}
+.color22{
+	background-color: #6A4C93;
+}
+.color23{
+	background-color: #80ED99;
+}
+.color24{
+	background-color: #E39774;
+
+
+}
+.registrar{
+	color: white;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+.registrar:hover{
+	color: white;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>usuario</title>
+<link rel="stylesheet" href="css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="cssPry/registrarProducto.css"
+	th:href="@{/cssPry/registrarProducto.css}">
+
+</head>
+<body>
+
+	<div class="container pt-4 bg-dark">
+		<div class="card bg-dark">
+			<div class="col-12 admin bg-light pt-2">
+				<h1 class="text-dark">DETALLE DEL USUARIO</h1>
+			</div>
+			<div
+				class="card-header bg-dark text-white text-center text-uppercase"
+				th:text=${titulo}></div>
+
+			<div class="row bg-light">
+
+				<div class="col-6 pb-4">
+					<div class="card-body">
+						<img class="img-thumbnail rounded float-left border border-dark"
+							th:src="@{'/recurso/' + ${Client.foto}}" th:alt="${Client.foto}"
+							style="max-width: 100%;">
+					</div>
+				</div>
+
+				<div class="row pt-4">
+					<ul class="list-group">
+
+						<li class="list-group-item"
+							th:text="'ID del usuario: ' + ${Client.id}"></li>
+						<li class="list-group-item"
+							th:text="'Nombre: ' + ${Client.Nombre}"></li>
+						<li class="list-group-item"
+							th:text="'Apellido: ' + ${Client.Apellido}"></li>
+						<li class="list-group-item"
+							th:text="'Tipo id: ' + ${Client.tipo_id}"></li>
+						<li class="list-group-item"
+							th:text="'Número id: ' + ${Client.numero}"></li>
+						<li class="list-group-item"
+							th:text="'Correo: ' + ${Client.Correo}"></li>
+						<li class="list-group-item"
+							th:text="'Direccion: ' + ${Client.Direccion}"></li>
+						<li class="list-group-item"
+							th:text="'Localidad: ' + ${Client.localidad}"></li>
+						<li class="list-group-item"
+							th:text="'Genero: ' + ${Client.genero}"></li>
+						<li class="list-group-item"
+							th:text="'Teléfono: ' + ${Client.telefono}"></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="col pt-4">
+				<div class="modal-content pb-5">
+					<div class="col-6 admin">
+						<h1>REGISTRAR CLIENTE</h1>
+					</div>
+
+					<form class="col" th:action="@{/cli}" th:object=${cc}
+						method="POST" enctype="multipart/form-data">
+						<div class="row">
+
+							<div class="col-lg-12 col-sm-12">
+								<div class="form-group" id="marca-group">
+									<input type="hidden" class="form-control"
+										placeholder="ID del usuario" name="id" required
+										th:field="*{id}"> <input type="number"
+										class="form-control" placeholder="ID del usuario"
+										name="id_usuario" required th:field="*{usuario}">
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="boton btn-block">
+								<input class="registrate col-12" type="submit" value="REGISTRAR">
+							</div>
+						</div>
+
+					</form>
+				</div>
+					
+			</div>
+
+	
+	</div>
+		</div>
+
+
+
+
+	<script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+	<script type="text/javascript" src="css/bootstrap.bundle.min.js"></script>
+	<script src="js/popper.min.js"></script>
+</body>
+</html>

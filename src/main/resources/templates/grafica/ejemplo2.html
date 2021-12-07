@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="dist/Chart.bundle.min.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		var datos = {
+			labels : ["Zapatilla", "Deportivo", "Bota/Botin", "Formal", "Colegial"],
+			datasets : [{
+				label : "Lo mas Vendido",
+				data : [54,
+				 42,
+				 59,
+				 67,
+				 55,
+				 ],
+				backgroundColor: [
+						"darkred",
+						"yellow",
+						"black",
+						"darkblue",
+						"purple",
+					],
+
+				
+			},
+			/*
+			{
+
+				label : "Calzado mas bendido",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,5,6,5]
+			},*/
+			/*{
+				label : "datos 3",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17]
+			}*/
+			]
+		};
+
+
+		var canvas = document.getElementById('chart').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "bar",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(99,99,99)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text : "Registros de Inventario"
+				}
+			}
+		});
+	});
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var datos = {
+			labels : ["Zapatilla", "Deportivo", "Bota/Botin", "Formal", "Colegial"],
+			datasets : [{
+				label : "Lo mas Vendido",
+				data : [30,
+				 42,
+				 10,
+				 35,
+				 55,
+				 ],
+				backgroundColor: [
+						"darkred",
+						"#909497",
+						"black",
+						"darkblue",
+						"#138D75 ",
+					],
+
+				
+			},
+			/*
+			{
+
+				label : "Calzado mas bendido",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,5,6,5]
+			},*/
+			/*{
+				label : "datos 3",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17]
+			}*/
+			]
+		};
+
+
+		var canvas = document.getElementById('grafico').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "pie",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(99,99,99)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text : "Cantidad de Productos"
+				}
+			}
+		});
+	});
+	</script>	
+</head>
+<body>
+	<div id="canvas-container" style="width:50%; float:left; ">
+		<canvas id="chart" width="500" height="350"></canvas>
+	</div>
+	<div id="canvas-container" style="width:50%; float: right;">
+		<canvas id="grafico" width="500" height="350"></canvas>
+	</div>
+</body>
+</html>

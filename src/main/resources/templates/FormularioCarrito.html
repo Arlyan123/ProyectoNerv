@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+	<link rel="stylesheet" href="cssPry/carrito.css" th:href ="@{/cssPry/carrito.css}">
+	<title>Formulario</title>
+</head>
+<body>
+	<div class="Container-fluid p-3">
+	<form>
+  <div class="form-row">
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Nombre" required="">
+    </div>
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Apellido" required="">
+    </div>
+  </div>
+<div class="form-group">
+    <input type="text" class="form-control" id="direccion1" placeholder="Dirección" required="">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="direccion2" placeholder="Casa, Apartamento, piso" required="">
+  </div>
+   <div class="form-row">
+   	<div class="form-group col-md-6 col-lg-6">
+      <select id="localidad" class="custom-select" required="">
+        <option selected>Escoge tu localidad</option>
+        <option>Usaquén</option>
+        <option>Chapinero</option>
+        <option>Santa Fé</option>
+        <option>San Cristóbal</option>
+        <option>Usme</option>
+        <option>Tunjuelito</option>
+        <option>Bosa</option>
+        <option>Kennedy</option>
+        <option>Fontibón</option>
+        <option>Engativá</option>
+        <option>Suba</option>
+        <option>Barrios Unidos</option>
+        <option>Teusaquillo</option>
+        <option>Los Martires</option>
+        <option>Antonio Nariño</option>
+        <option>Puente Aranda</option>
+        <option>Candelaria</option>
+        <option>Rafael Uribe Uribe</option>
+        <option>Ciudad Bolivar</option>
+        <option>Sumapaz</option>
+
+      </select>
+    </div>
+    <div id="validation" class="invalid-feedback">
+        Por favor seleccione una localidad.
+      </div>
+    <div class="form-group col-md-6 col-lg-6">
+      <input type="text" class="form-control" id="barrio" placeholder="Barrio" required="">
+    </div></div>
+
+    <div class="form-row">
+    <div class="col-lg-6 col-sm-6 pb-3">
+      <input type="number" class="form-control" placeholder="Teléfono" maxlength="10" required="">
+    </div>
+    <div class="col-sm-6 col-lg-6 pb-3">
+      <input type="email" class="form-control" placeholder="E-mail" required="">
+    </div>
+    <div id="validation" class="invalid-feedback">
+        Use un correo valido.
+      </div>
+  </div>
+
+  <div class="form-row">
+<div class="form-group col-lg-6 col-sm-6">
+      <select class="custom-select" id="Identificacion" required="">
+        <option selected>Tipo de identificación</option>
+        <option value="1" disabled>Tarjeta de identidad</option>
+        <option value="2">Cedula de Ciudadania</option>
+        <option value="3">Cedula de Extranjeria</option>
+        <option value="4">Pasaporte</option>
+      </select>
+    </div>
+
+<div class="form-group col-lg-6 col-sm-6">
+      <input type="number" class="form-control" id="id" placeholder="Numero de identificaión" maxlength="11" required="">
+    </div>
+
+</div>
+
+<div class="form-group-row">
+	<div class="col-lg-12 col-sm-12">
+	<input class="form-check-input" type="checkbox" value="" id="check" required="">
+	<label class="form-check-label pb-2">Adevertencia
+  Autorizo a Sistema de información NERV para que lleve a cabo el Tratamiento de mis datos personales de conformidad con la Política de Privacidad. Confirmo que he leído y acepto el Aviso de Privacidad y la Política de Tratamiento de Datos Personales de NERV. Al marcar esta casilla autorizo el tratamiento de mis datos personales y confirmo que soy mayor de edad.</label>
+	</div>
+</div>
+
+<button type="submit" class="btn btn-primary col-12" data-toggle="modal" data-target="#aviso">Enviar</button>
+<span>Los pagos se hacen contra entrega*</span>
+
+</form>
+</div>
+
+  <div class="modal" id="aviso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-dark">
+            <h4>¡GRACIAS POR TU COMPRA!</h4>
+            <button type="button" class="close" data-dismiss="modal">&Otimes;</button>
+          </div>
+
+          <div class="modal-body">
+          <p>
+          Tu orden 1234 fue recibida exitosamente. Recibirás un email de confirmación de tu pedido</p>
+          <p>
+          Información importante:
+          Una vez nos pagues a contra entrega nosotros te entregaremos tu pedido para validar el estado de tus productos</p>
+          </div>
+          
+          <div class="modal-footer">
+            <span><p>Serás notificado via email la infomación del pedido como la fecha y confirmación de disponibilidad de los productos*</p></span>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+
+
+
+
+
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="css/bootstrap.bundle.min.js"></script>
+	<script src="js/popper.min.js"></script>
+</body>
+</html>

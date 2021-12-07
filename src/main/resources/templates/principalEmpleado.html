@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+	<link rel="stylesheet" href="Empleado/cssPry/dashboard_empleado.css" th:href ="@{/Empleado/cssPry/dashboard_empleado.css}">
+	<link rel="stylesheet" href="css/all.css" th:href ="@{/css/all.css}">
+	<title>Empleado</title>
+</head>
+<body>
+
+<div class="row">
+        <div class="col lg-4 mb-2">
+
+				<div class="card border-info">
+				<img src="Empleado/img/5.jpeg" class="img-fluid">
+				<div class="card-body text-dark">
+					<h3>Diego Sneider Diaz</h3>
+					<p class="card-text" >Empleado de zapateria DiDi y NERV</p>
+					<a href="/ConsultarEmpleado" class="btn btn-info btn-block" target="principal">Ver perfil</a>
+				</div>
+			</div>
+			</div>
+			<div class="col-md-8">
+
+				<div class="row">
+
+					<div class="col">
+						<div class="card  color16">
+							<div class="card-header bg-success">
+								<h5>Inventario</h5>
+							</div>
+							<div class="card-body">
+								<p class="card-body text-dark">Funciones Modulo Inventario</p>
+								<a href="/empleadoInventario" target="principal" class="card-link" >Acceder</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row mt-4">
+					<div class="col">
+						<div class="card color2">
+							<div class="card-header bg-warning">
+								<h5>Pedidos</h5>
+							</div>
+							<div class="card-body">
+								<p class="card-body text-dark">Funciones Modulo Pedidos</p>
+								<a href="/empleadoPys" target="principal" class="card-link" >Acceder</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col">
+    				<div class="card color6">
+    					
+    				<div class="card-header bg-danger">
+    					<h5>Administrar cuenta<span class="badge badge-light badge-pill" style="font-size: 9px;">nuevo</span></h5>
+    				</div>
+    				<div class="card-body">
+    					<p class="card-body text-dark">Administra tu perfil</p>
+    					<a href="/empleadoGestion" class="card-link" target="principal">Acceder</a>
+    				</div>
+    			</div>
+    		</div>
+    		</div>
+    	</div>
+    </div>
+    </div>
+
+
+
+
+
+
+	<script type="text/javascript" src="../js/jquery-3.5.1.slim.min.js"></script>
+	<script type="text/javascript" src="../css/bootstrap.bundle.min.js" ></script>
+	<script src="../js/popper.min.js"></script>
+</body>
+</html>

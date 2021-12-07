@@ -1,0 +1,19 @@
+ .border{
+  width: 500%;
+  height: 700px;
+ }
+ main iframe{
+  width: 120%;
+  height: 100%;
+ }
+ .btn{
+width: 100%;
+
+ }
+.btn a{
+	color:white;
+}
+.btn a:hover{
+	color: white;
+	text-decoration: none;
+}

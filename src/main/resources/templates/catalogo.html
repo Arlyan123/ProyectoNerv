@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="cssPry/Catalogos/mujer.css"
+	th:href="@{/cssPry/Catalogos/mujer.css}">
+<title>Catálogo</title>
+</head>
+<body>
+	<div class="container-fluid" th:each="Producto: ${productoList}">
+
+		<div class="catalogo pt-2">
+			<section class="row justify-content-center bg-light">
+				<div class="col-sm-4 col-lg-4 pt-2 pb-2">
+					<div class="card text-center border border-warning pb-4">
+						<tr>
+							<div class="card-header color21 pb-2">
+								<h2>
+									<th th:text="${Producto.Marca}"></th>
+									<th th:text="${Producto.Color}"></th>
+									<strong><th th:text="${Producto.descripcion}"></strong>
+								</h2>
+							</div>
+							<div class="card-body">
+								<img th:src="@{'/recursos/' + ${Producto.foto}}"
+									th:alt="${Producto.foto}">
+							</div>
+						</tr>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="css/bootstrap.bundle.min.js"></script>
+	<script src="js/popper.min.js"></script>
+</body>
+</html>

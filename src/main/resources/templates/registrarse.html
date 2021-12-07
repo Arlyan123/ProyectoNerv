@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="cssPry/registrar.css" th:href ="@{/cssPry/registrar.css}">
+
+</head>
+<body>
+    <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a href="#" class="navbar-brand"></a><a href="index.html" id="nerv"><img src="img/logoo.png" style="width: 30%;"></a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span>
+                    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="menu">
+
+        
+           <ul class="navbar-nav justify-content-center order-center">
+            <li class="nav-item"><a href="index.html" class="nav-link btn btn-outline-info">Inicio</a></li>
+            </ul>
+
+    </div>
+
+            
+    </nav>
+
+    </div>
+    </div>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-9 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="img/1713924.jpeg">
+                </div>
+                <form class="col-12">
+
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="&#x1F464;Nombre y Apellidos" name="username" required />
+                    </div>
+             
+                    <div class="form-group" id="email-group">
+                    <input type="email" class="form-control" placeholder="&#x1F4E7;Email"  name="email" required>
+                    </div>
+                    <div class="form-group" id="rol-group">
+                    <select class="form-control" id="tipIdent"  name="tiporol" required>
+                    <option value="rol">Seleccione su Rol</option>
+                    <option value="admin"><a href="Administrador.html">Administrador</a></option>
+                    <option value="c"><a href="Cliente.html">Cliente</a></option>
+                    <option value="emp"><a href="Empleado.html">Empleado</a></option>
+                    </select>
+                    </div>
+
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password" class="form-control" placeholder="&#x1F512;Contrasena" name="password" required />
+                    </div>
+
+                    <div class="boton pb-4">
+                    <input class="registrate" type="submit" value="ENVIAR">
+                    <input class="limpiar" type="reset" value="LIMPIAR">
+                </div>
+                 <div class="row">
+
+                 <div class="col-12 form-group text-center ingresar-block">
+                  <span><a href="ingresar.html" class="ingresar">INGRESAR</a></span></div> 
+                  </div>
+
+                </form>
+    </div>
+
+
+
+
+
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+<script type="text/javascript" src="css/bootstrap.bundle.min.js"></script>	
+<script type="text/javascript" src="js/popper.min.js"></script>
+</body>
+</html>

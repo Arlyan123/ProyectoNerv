@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="Empleado/cssPry/dashboard_empleado.css">
+	<link rel="stylesheet" href="../css/all.css">
+	<title>Empleado</title>
+</head>
+<body>
+
+	<div class="container-fluid bg-light">
+
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-sm color3 navbar-dark">
+                    <img src="../img/logoo.png" style="width: 8%">
+					<a href="/principalEmpleado" target="principal" class="navbar-brand pl-2">Empleado</a>
+					<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+
+					<div class="collapse navbar-collapse justify-content-end" id="menu">
+						<ul class="navbar-nav">
+							
+							<li class="nav-item"><a href="/inicio"  class="signIn nav-link"><i class="fas fa-sign-in-alt">Cerrar sesión</i></a></li>
+                             <li class="nav-item"><a href="/principalEmpleado" target="principal" class="signIn nav-link"><i class="fas fa-sign-in-alt">Inicio</i></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+<!--Fila barra lateral y contenido -->
+		<div class="row text-light">
+			<div class="col-sm-2 col-lg-2">
+
+        <nav id="menu" class="d-md-block collapse color3 navbar-dark pl-4 text-white">
+
+        <div class="navTitulo">
+        <h1>Gestionar Cuenta</h1>
+        </div>
+
+        <ul class="navbar-nav">
+            
+            <li><a href="#" class="nav-link" data-toggle="modal" data-target="#modificar"><i class="fas fa-user-plus"></i>Modificar cuenta</a></li>
+            <li class="nav-item"><a href="/ConsultarEmpleado" target="principal" class="nav-link"><i class="fas fa-search"></i></i>Consultar cuenta</a></li>
+            <li class="nav-item"><a href="/cambiarContraseña" target="principal" class="nav-link"><i class="fas fa-key"></i>Cambiar contraseña</a></li>
+
+        </ul>
+
+        
+		<div class="navTitulo">
+		<h1>Inventario</h1>
+		</div>
+
+		<ul class="navbar-nav">
+			
+			<li class="nav-item"><a href="/GestionarProductos" target="principal" class="nav-link"><i class="fas fa-search"></i>Gestionar Producto </a></li>
+             <li class="nav-item"><a href="/catalogo" target="principal" class="nav-link"><i class="fas fa-book"></i>Ver Catálogo</a></li>
+            <li class="nav-item"><a href="/carCliente" target="principal" class="nav-link"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
+			
+
+		
+		</ul>
+
+		<div class="navTitulo">
+		<h1>Pedidos y envíos</h1>
+		</div>
+
+		<ul class="navbar-nav">
+
+            <li class="nav-item"><a href="/consultarenvio" target="principal" class="nav-link"><i class="fas fa-bus"></i>Gestionar envíos</a></li>
+
+
+            <li class="nav-item"><a href="/consultarPedidos" target="principal" class="nav-link"><i class="fas fa-luggage-cart"></i>Gestionar pedidos</a></li>
+
+
+        </ul>
+		
+	    </nav>
+</div>
+
+
+<div class="col-lg-10">
+        <div class="row mt-2">
+            
+    <main class="border">
+            <iframe src="/principalEmpleado" name="principal"frameborder="0"></iframe>
+        </main>
+    </div>
+    </div>
+
+    <div class="modal" id="Agenda">
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+    			<div class="modal-header text-white">
+    				<h4>Modificar perfil</h4>
+    				<button type="button" class="close" data-dismiss="modal">&Otimes;</button>
+    			</div>
+
+    			<div class="modal-body">
+    				<form class="col-12">
+
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="&#x1F464;Nombre y Apellidos" name="username" required />
+                    </div>
+
+                    <div class="form-group" id="id-group">
+                    <select class="form-control" id="tipIdent" name="tipoIdent" required>
+                    <option value="sel">Tipo de Identificacion</option>
+                    <option value="cc">Cedula</option>
+                    <option value="TI">Tarjeta de Indentidad</option>
+                    <option value="ce">Cedula Extranjera</option>
+                    <option value="pas">Pasaporte</option>
+                    </select>
+                    </div>
+                          
+                    <div class="form-group" id="id-group">
+                    <input class="form-control" id="ident" placeholder="&#x2116; De Identificacion" name="ident" maxlength="11" required>
+                    </div>
+
+                     <div class="form-group" id="nacimiento-group">
+                    <label for="nacimiento">Fecha de Nacimiento</label>
+                    <input class="form-control" type="date" id="nacimiento" name="nacimiento" value="0000-00-00" min="1300-01-01" max="2003-12-31" placeholder="Fecha de nacimiento" required>
+                    </div>
+
+                    <div class="form-group" id="gen-group">
+                    <select class="form-control" id="tipIdent"  name="tipogen" required>
+                    <option value="gen">Seleccione su Genero</option>
+                    <option value="h">Hombre</option>
+                    <option value="m">Mujer</option>
+                    </select>
+                    </div>
+                        
+                    <div class="form-group" id="id-group">
+                     <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="&#x1F4DE; Telefono:07-6972135345" pattern="[0-9]{2}-[0-9]{10}"required>
+                    </div>
+
+                    <div class="form-group" id="email-group">
+                    <input type="email" class="form-control" placeholder="&#x1F4E7;Email"  name="email" required>
+                    </div>
+
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password" class="form-control" placeholder="&#x1F512;Contrasena" name="password" required />
+                    </div>
+
+                    <div class="boton btn-block">
+                    <input class="registrate" type="submit" value="ENVIAR">
+                    <input class="limpiar" type="reset" value="LIMPIAR">
+                </div>
+                </form>
+    			</div>
+    			<div class="modal-footer">
+    				<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+    			</div>
+    		</div>
+
+    	</div>
+    </div>
+
+
+
+
+	 <div class="modal" id="modificar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-white">
+                    <h4>Modificar perfil</h4>
+                    <button type="button" class="close" data-dismiss="modal">&Otimes;</button>
+                </div>
+
+                <div class="modal-body">
+                     <form class="col-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="&#x1F464;Nombres" name="username" required pattern="[a-z A-Z]+" />
+                    </div></div>
+                    <div class="col-lg-12">
+
+                     <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="&#x1F464;Apellidos" name="username" required pattern="[a-z A-Z]+"/>
+                    </div></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="ciudad" placeholder="&#x2390;Tipo de Identificacion" list="Identificacion" required>
+                    <datalist id="Identificacion">
+                    <option >Cedula</option>
+                    <option disabled >Tarjeta de Indentidad</option>
+                    <option >Cedula Extranjera</option>
+                    <option >Pasaporte</option>
+                     </datalist>
+                    </div></div>
+                    <div class="col-lg-6">
+              
+                    <div class="form-group" id="id-group">
+                    <input class="form-control" id="ident" placeholder="&#x2116; De Identificacion" name="ident" maxlength="10" required pattern="[0-9]+">
+                    </div></div></div>
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                     <div class="form-group" id="nacimiento-group">
+                    <label for="nacimiento">Fecha de Nacimiento</label>
+                    <input class="form-control" type="date" id="nacimiento" name="nacimiento" value="0000-00-00" min="1900-01-01" max="2003-12-31" placeholder="Fecha de nacimiento" required>
+                    </div>
+                    </div>
+                        <div class="col-lg-12">
+
+                    <div class="form-group" id="gen-group">
+                    <label for="nacimiento">Seleccione</label>
+                    <input class="form-control" type="text" name="ciudad" placeholder="&#x26A4;Seleccione su sexo" list="Sexo" required>
+                    <datalist id="Sexo">
+                    <option >Hombre</option>
+                    <option >Mujer</option>
+                    </datalist>
+                    </div></div></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                    <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="ciudad" placeholder="&#x1F3E1;Ingrese su Barrio" list="Barrio" required>
+                    <datalist id="Barrio">
+                     <option >Lomas</option>
+                     <option >Bochica</option>
+                     <option >Usme</option>
+                     <option >Soacha</option>
+                     <option >Ciudad Verde</option>
+                     <option >Las Cruces </option>
+                     <option >San Victorino</option>
+                     <option >Santa Fe</option>
+                     <option >Santa Isabel</option>
+                     </datalist>
+                      </div></div>
+                      <div class="col-lg-6">
+
+
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" placeholder="&#x1F3E0;Direccion" id="direccion" name="direccion" required>
+                    </div></div></div>
+
+                    <div class="row">
+                    <div class="col">
+                    <div class="form-group" id="tel-group">
+                     <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="&#x1F4DE; Telefono:07-6972135345" pattern="[0-9]{2}-[0-9]{10}"required pattern="[0-9]+">
+                    </div></div>
+                    <div class="col">
+
+                    <div class="form-group" id="email-group">
+                    <input type="email" class="form-control" placeholder="&#x1F4E7;Email" name="email" required>
+                    </div></div></div>
+
+                    <div class="row">
+                    <div class="btn col">
+                    <input class="registrate" type="submit" value="ENVIAR"></div>
+                    <div class="btn col">
+                    <input class="limpiar" type="reset" value="LIMPIAR">
+                </div></div>                </form>
+
+
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+	<script type="text/javascript" src="../js/jquery-3.5.1.slim.min.js"></script>
+	<script type="text/javascript" src="../css/bootstrap.bundle.min.js" ></script>
+	<script src="../js/popper.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gestionar Administrador</title>
+	<link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+  <link rel="stylesheet" href="css/all.css" th:href ="@{/css/all.css}">
+  <link rel="stylesheet" href="cssPry/modulos.css" th:href ="@{/cssPry/modulos.css}">
+
+</head>
+<body>  
+
+
+<div class="container-fluid">
+<div class="row pt-3">
+    <div class="col-lg-4 col-sm-4">
+    <button class="btn btn-danger"><a href="/administrador" target="principal4">Gestionar Cuenta</a></button>
+</div>
+<div class="col-lg-4 col-sm-4">
+    <button class="btn btn-warning"><a href="/cambiarContraseña" target="principal4">Cambiar Contraseña</a></button>
+</div>
+</div>
+<div class="col-lg-10">
+        <div class="row mt-2">
+            
+    <main class="border">
+            <iframe src="/administrador" name="principal4"frameborder="0"></iframe>
+        </main>
+    </div>
+    </div>
+              
+</div>
+
+
+
+
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+<script type="text/javascript" src="css/bootstrap.bundle.min.js"></script>  
+<script type="text/javascript" src="js/popper.min.js"></script>
+</body>
+</html>

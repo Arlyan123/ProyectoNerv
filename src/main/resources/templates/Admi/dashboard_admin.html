@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="Admin/cssPry/dasboard_admin.css"
+	th:href="@{/Admin/cssPry/dasboard_admin.css}">
+<link rel="stylesheet" href="../css/all.css">
+<title>Administrador</title>
+</head>
+<body>
+
+	<div class="container-fluid bg-light">
+
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-sm color3 navbar-dark">
+					<img src="../img/logoo.png" style="width: 8%" class=""> <a
+						href="/principal" target="principal" class="navbar-brand pl-2"><h3>
+							<span sec:authentication="name"></span>
+						</h3>
+						<span sec:authentication="principal.authorities"></span></a>
+					<button type="button" class="navbar-toggler" data-toggle="collapse"
+						data-target="#menu">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+
+					<div class="collapse navbar-collapse justify-content-end" id="menu">
+						<ul class="navbar-nav">
+
+							<li class="nav-item"><a href="/inicio"
+								class="signIn nav-link"><i>Inicio</i></a></li>
+							<form th:action="@{/logout}" method="post">
+								<button class="signIn nav-link text-dark fas fa-sign-in-alt"
+									type="submit"></button>
+							</form>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!--Fila barra lateral y contenido -->
+		<div class="row text-light">
+
+
+			<div class="col-sm-12 col-lg-2">
+
+				<nav id="menu" class="d-md-block collapse color3 navbar-dark pl-4">
+
+					<div class="navTitulo pt-3">
+						<h1>Clientes</h1>
+					</div>
+
+					<ul class="navbar-nav">
+						<li class="nav-item"><a href="/Client" class="nav-link"
+							target="principal"><i class="fas fa-user-plus"></i>Registrar
+								Cliente</a></li>
+
+						<li class="nav-item"><a target="principal" href="/compra"
+							class="nav-link"><i class="fas fa-shopping-basket"></i>Realizar
+								compra</a></li>
+
+						<li class="nav-item"><a target="principal"
+							href="/consultarCliente" class="nav-link"><i
+								class="fas fa-user-edit"></i>Gestionar Clientes</a></li>
+
+					</ul>
+
+					<div class="navTitulo">
+						<h1>Inventario</h1>
+					</div>
+
+					<ul class="navbar-nav">
+
+						<li class="nav-item"><a href="/GestionarProductos"
+							target="principal" class="nav-link"><i class="fas fa-search"></i>Gestionar
+								productos</a></li>
+						<li class="nav-item"><a href="/catalogo" target="principal"
+							class="nav-link"><i class="fas fa-book"></i>Catalogo</a></li>
+
+
+					</ul>
+
+					<div class="navTitulo">
+						<h1>Pedidos y envios</h1>
+					</div>
+
+					<ul class="navbar-nav">
+
+
+						<li class="nav-item"><a th:href="@{venta}" target="principal"
+							class="nav-link"><i class="fas fa-shopping-cart"></i>Nueva venta</a></li>
+
+
+
+						<li class="nav-item"><a th:href="@{noPagado}"
+							target="principal" class="nav-link"><i
+								class="fas fa-luggage-cart"></i>Gestionar ventas</a></li>
+
+
+					</ul>
+
+				</nav>
+			</div>
+
+			<!--contenido del centro --->
+			<div class="col-lg-10">
+				<div class="row-lg-12">
+
+					<main class="border"> <iframe class="col-12"
+						src="/principal" name="principal" frameborder="0"></iframe> </main>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.5.1.slim.min.js"></script>
+	<script type="text/javascript" src="../css/bootstrap.bundle.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+
+
+</body>
+</html>

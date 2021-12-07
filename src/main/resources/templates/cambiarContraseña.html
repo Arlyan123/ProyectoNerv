@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar contraseña</title>
+    <link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="cssPry/registrarProducto.css" th:href ="@{/cssPry/registrarProducto.css}">
+
+</head>
+<body>
+    
+        <div class="col-sm-20 ">
+            <div class="modal-content">
+                <div class="col-12 admin">
+                    <h1>CAMBIAR CONTRASEÑA</h1>
+                </div>
+                <form class="col-12 pt-3">
+                  <div class="form-row">
+                <div class="form-group col-md-12 text-white">
+                <input type="password" class="form-control" id="contraseña1" placeholder="Contraseña antigua" required="">
+                </div>
+                  </div>
+                <div class="form-row">
+                <div class="form-group col-md-12 text-white">
+                <input type="password" class="form-control" id="contraseña2" placeholder="Contraseña nueva" required="">
+                </div>
+                  </div>
+                <div class="form-row">
+                <div class="form-group col-md-12 text-white">
+                <input type="password" class="form-control" id="contraseña2" placeholder="Confirmar contraseña nueva" required="">
+                </div>
+                  </div>
+                <button id="cam" type="submit" class="btn btn-success col-12" >Aceptar</button></form>
+                
+    </div>
+    </div>
+<script src="Sweetalert/sweetalert.min.js"></script>
+
+<script>
+  $("#cam").click(function (){
+  swal("Buen trabajo", "Ha cambiado el estado", "success");
+  });
+  
+</script>
+
+<script type="text/javascript" src="../js/jquery-3.5.1.slim.min.js"></script>
+  <script type="text/javascript" src="../css/bootstrap.bundle.min.js" ></script>
+  <script src="../js/popper.min.js"></script>
+</body>
+</html>

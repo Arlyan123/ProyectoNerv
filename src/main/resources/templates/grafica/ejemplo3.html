@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="dist/Chart.bundle.min.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		var datos = {
+			labels : ["18", "20", "30", "40", "50", "60", "70"],
+			datasets : [{
+				label : "Rango de Edad",
+				data : [7,
+				 32,
+				 25,
+				 12,
+				 45,
+				 16,
+				 65,
+				 ],
+				backgroundColor: [
+						"lightblue",
+						"teal",
+						"green",
+						"#884EA0",
+						"lightgreen",
+						"pink",
+						"purple",
+					],
+
+				
+			},
+			/*
+			{
+
+				label : "Calzado mas bendido",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,5,6,5]
+			},*/
+			/*{
+				label : "datos 3",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17]
+			}*/
+			]
+		};
+
+
+		var canvas = document.getElementById('chart').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "bar",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(99,99,99)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text : "Registros de Clientes"
+				}
+			}
+		});
+	});
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var datos = {
+			labels : ["Hombre", "Mujer"],
+			datasets : [{
+				label : "Lo mas Vendido",
+				data : [42,
+				 32,
+				 ],
+				backgroundColor: [
+						"darkred",
+						"yellow"
+					],
+
+				
+			},
+			/*
+			{
+
+				label : "Calzado mas bendido",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,5,6,5]
+			},*/
+			/*{
+				label : "datos 3",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17]
+			}*/
+			]
+		};
+
+
+		var canvas = document.getElementById('grafico').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "pie",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(99,99,99)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text :"Reporte Envios"
+				}
+			}
+		});
+	});
+	</script>	
+</head>
+<body>
+	<div id="canvas-container" style="width:50%; float:left; ">
+		<canvas id="chart" width="500" height="350"></canvas>
+	</div>
+	<div id="canvas-container" style="width:50%; float: right;">
+		<canvas id="grafico" width="500" height="350"></canvas>
+	</div>
+</body>
+</html>

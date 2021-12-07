@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cliente</title>
+    <link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="cssPry/cliente.css" th:href ="@{/cssPry/cliente.css}">
+
+</head>
+<body>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-20 main-section">
+            <div class="modal-content">
+                <div class="col-12 admin">
+                    <h1>FORMULARIO CLIENTE</h1>
+                </div>
+                <form>
+  <div class="form-row">
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Nombre" required="" pattern="[a-z A-Z]+">
+    </div>
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Apellido" required="" pattern="[a-z A-Z]+">
+    </div>
+  </div>
+<div class="form-group">
+    <input type="text" class="form-control" id="direccion1" placeholder="Dirección" required="">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="direccion2" placeholder="Casa, Apartamento, piso" required="">
+  </div>
+   <div class="form-row">
+<div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="i" placeholder="localidad" list="localidad" required>
+      <datalist id="localidad">
+        <option selected>Escoge tu localidad</option>
+        <option>Usaquén</option>
+        <option>Chapinero</option>
+        <option>Santa Fé</option>
+        <option>San Cristóbal</option>
+        <option>Usme</option>
+        <option>Tunjuelito</option>
+        <option>Bosa</option>
+        <option>Kennedy</option>
+        <option>Fontibón</option>
+        <option>Engativá</option>
+        <option>Suba</option>
+        <option>Barrios Unidos</option>
+        <option>Teusaquillo</option>
+        <option>Los Martires</option>
+        <option>Antonio Nariño</option>
+        <option>Puente Aranda</option>
+        <option>Candelaria</option>
+        <option>Rafael Uribe Uribe</option>
+        <option>Ciudad Bolivar</option>
+        <option>Sumapaz</option>
+
+      </datalist>
+    </div></div>
+    <div id="validation" class="invalid-feedback">
+        Por favor seleccione una localidad.
+      </div>
+    <div class="form-group col-md-6 col-lg-6">
+      <input type="text" class="form-control" id="barrio" placeholder="Barrio" required="">
+    </div></div>
+
+    <div class="form-row">
+    <div class="col-lg-6 col-sm-6 pb-3">
+      <input type="number" class="form-control" placeholder="Teléfono" maxlength="10" required="">
+    </div>
+    <div class="col-sm-6 col-lg-6 pb-3">
+      <input type="email" class="form-control" placeholder="E-mail" required="">
+    </div>
+    <div id="validation" class="invalid-feedback">
+        Use un correo valido.
+      </div>
+  </div>
+
+  <div class="form-row">
+<div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="i" placeholder="Tipo de Identificacion" list="Identificacion" required>
+                    <datalist id="Identificacion">
+                    <option >Cedula</option>
+                    <option disabled >Tarjeta de Indentidad</option>
+                    <option >Cedula Extranjera</option>
+                    <option >Pasaporte</option>
+                     </datalist>
+                    </div></div>
+
+<div class="form-group col-lg-6 col-sm-6">
+      <input type="number" class="form-control" id="id" placeholder="Numero de identificaión" maxlength="11" required="">
+    </div>
+
+</div>
+
+<button type="submit" class="btn btn-primary col-12" >Enviar</button>
+
+</form>
+    </div>
+
+
+
+
+
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+<script type="text/javascript" src="css/bootstrap.bundle.min.js"></script>	
+<script type="text/javascript" src="js/popper.min.js"></script>
+</body>
+</html>

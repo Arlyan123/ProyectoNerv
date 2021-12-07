@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>registrar producto</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="cssPry/registrarProducto.css">
+    </head>
+    <body>
+          <div class="container form-group">
+          <h1>Editando Producto</h1>
+                 
+        
+<table id="example" class="table display">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Color</th>
+          <th scope="col">Talla</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Materia Prima</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Agregarr</th>
+
+        </tr>
+      </thead>
+      
+      <tbody>      
+ <tr>
+
+</tr>
+
+</tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="aceptar" tabindex="-1" aria-labelledby="aceptar" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" id="aceptar">Felicidades haz realizado tu pedido!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-white">
+        Estas a muy pocos pasos de realizar tu compra, Deseas realizar tu envío?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#envio">Realizar envío</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade lg-12" id="envio">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--Encabezado -->
+      <div class="modal-header text-white">
+        <h4>Advertencia</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!--Contenido -body- -->
+      <div class="modal-body">
+        <form onsubmit="return aviso()">
+  <div class="form-row">
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Nombre" required="" name="nombre" pattern="[a-z A-Z]+">
+    </div>
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Apellido" required="" name="apellido" pattern="[a-z A-Z]+">
+    </div>
+  </div>
+<div class="form-group">
+    <input type="text" class="form-control" id="direccion1" placeholder="Dirección" name="direccion1" required="">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="direccion2" placeholder="Casa, Apartamento, piso" name="direccion2" required="">
+  </div>
+   <div class="form-row">
+<div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="local" placeholder="localidad" list="localidad" required>
+      <datalist id="localidad" name="local">
+        <option selected>Escoge tu localidad</option>
+        <option value="1">Usaquén</option>
+        <option value="2">Chapinero</option>
+        <option value="3">Santa Fé</option>
+        <option value="4">San Cristóbal</option>
+        <option value="5">Usme</option>
+        <option value="6">Tunjuelito</option>
+        <option value="7">Bosa</option>
+        <option value="8">Kennedy</option>
+        <option value="9">Fontibón</option>
+        <option value="10">Engativá</option>
+        <option value="11">Suba</option>
+        <option value="12">Barrios Unidos</option>
+        <option value="13">Teusaquillo</option>
+        <option value="14">Los Martires</option>
+        <option value="15">Antonio Nariño</option>
+        <option value="16">Puente Aranda</option>
+        <option value="17">Candelaria</option>
+        <option value="18">Rafael Uribe Uribe</option>
+        <option value="19">Ciudad Bolivar</option>
+        <option value="20">Sumapaz</option>
+
+      </datalist>
+    </div></div>
+    <div id="validation" class="invalid-feedback">
+        Por favor seleccione una localidad.
+      </div>
+    <div class="form-group col-md-6 col-lg-6">
+      <input type="text" class="form-control" id="barrio" placeholder="Barrio"  name="barrio" direccion2required="">
+    </div></div>
+
+    <div class="form-row">
+    <div class="col-lg-6 col-sm-6 pb-3">
+      <input type="number" class="form-control" placeholder="Teléfono" maxlength="10"  name="telefono" required="">
+    </div>
+    <div class="col-sm-6 col-lg-6 pb-3">
+      <input type="email" class="form-control" placeholder="E-mail"  name="correo" required="">
+    </div>
+    <div id="validation" class="invalid-feedback">
+        Use un correo valido.
+      </div>
+  </div>
+
+  <div class="form-row">
+<div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="tipo" placeholder="Tipo de Identificacion" list="Identificacion" required>
+                    <datalist id="Identificacion">
+                    <option >Cedula</option>
+                    <option disabled >Tarjeta de Indentidad</option>
+                    <option >Cedula Extranjera</option>
+                    <option >Pasaporte</option>
+                     </datalist>
+                    </div></div>
+
+<div class="form-group col-lg-6 col-sm-6">
+      <input type="number" class="form-control" name="id" placeholder="Numero de identificaión" maxlength="11"  name="identificacion" required="">
+    </div>
+
+</div>
+ <div class="row">
+  <div class="col-1"><input class="form-check-input" type="checkbox" id="check" required=""></div>
+  </div>
+<div class="form-group-row">
+ 
+  <div class="col-lg-12 col-sm-12">
+  <label class="form-check-label pb-2">
+  Autorizo a Sistema de información NERV para que lleve a cabo el Tratamiento de mis datos personales de conformidad con la Política de Privacidad. Confirmo que he leído y acepto el Aviso de Privacidad y la Política de Tratamiento de Datos Personales de NERV. Al marcar esta casilla autorizo el tratamiento de mis datos personales y confirmo que soy mayor de edad.</label>
+
+  </div>
+</div>
+
+<button type="submit" name="btnn" class="btn btn-success col-12" >Enviar</button>
+
+
+</form>
+           
+    </div>
+      </div>
+      <!--Pie modal -footer- -->
+      <div class="modal-footer">
+        <button type="button"  id="enviar" class="btn btn-info col-6">Sobre tu envío</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+<!--Link principal -->
+<script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+<script type="text/javascript" src="css/bootstrap.bundle.min.js" ></script>
+<script src="js/popper.min.js"></script>
+
+<!--Datatables -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script> 
+<!--Botones-->
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+
+<script type="text/javascript" src="datatable/JSZip-2.5.0/jszip.min.js"></script>
+
+<script type="text/javascript" src="datatable/pdfmake-0.1.36/pdfmake.min.js"></script>
+
+<script type="text/javascript" src="datatable/pdfmake-0.1.36/vfs_fonts.js"></script>
+<!--Selector -->
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+<!-- extension responsive -->
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<!--Alertas -->
+<script src="Sweetalert/sweetalert.min.js"></script>
+<!--JS para los mensajes y validaciones -->
+<script src="js/table.js"></script>
+
+    </body>
+</html>

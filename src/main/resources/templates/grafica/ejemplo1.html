@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="dist/Chart.bundle.min.js"></script>
+
+
+	<body>
+		<div id="canvas-container" style="width:50%; float:left; ">
+			<canvas id="chart" width="500" height="350"></canvas>
+		</div>
+		<div id="canvas-container" style="width:50%; float: right;">
+			<canvas id="grafico" width="500" height="350"></canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			var datos = {
+				labels : ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"],
+				datasets : [{
+					label : "Pedidos Realizados",
+					data : [7,
+					32,
+					25,
+					12,
+					45,
+					16,
+					65,
+					],
+					backgroundColor: ["rgb(19,99,99)"],
+
+
+				},
+			/*
+			{
+
+				label : "Calzado mas bendido",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,5,6,5]
+			},*/
+			/*{
+				label : "datos 3",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17]
+			}*/
+			]
+		};
+
+
+		var canvas = document.getElementById('chart').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "line",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(99,99,99)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text : "Registros de Pedidos"
+				}
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var datos = {
+			labels : ["Restrepo", "Lomas", "Bochica", "Patio Bonito", "Las Cruces"],
+			datasets : [{
+				label : "Lo mas Vendido",
+				data : [30,
+				42,
+				10,
+				35,
+				55,
+				],
+				backgroundColor: [
+				"darkred",
+				"#E67E22",
+				"#F1C40F",
+				"#D0D3D1",
+				"#2E86C1 ",
+				],
+
+				
+			},
+			/*
+			{
+
+				label : "Calzado mas bendido",
+				backgroundColor : "rgba(151,187,205,0.5)",
+				data : [10,7,5,6,5]
+			},*/
+			/*{
+				label : "datos 3",
+				backgroundColor : "rgba(151,100,205,0.5)",
+				data : [9,6,15,6,17]
+			}*/
+			]
+		};
+
+
+		var canvas = document.getElementById('grafico').getContext('2d');
+		window.bar = new Chart(canvas, {
+			type : "doughnut",
+			data : datos,
+			options : {
+				elements : {
+					rectangle : {
+						borderWidth : 1,
+						borderColor : "rgb(99,99,99)",
+						borderSkipped : 'bottom'
+					}
+				},
+				responsive : true,
+				title : {
+					display : true,
+					text :"Reporte Envios"
+				}
+			}
+		});
+	});
+</script>	
+</head>
+
+</html>

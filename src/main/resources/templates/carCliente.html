@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css" th:href ="@{/css/bootstrap.css}">
+	<link rel="stylesheet" href="cssPry/carrito.css" th:href ="@{/cssPry/carrito.css}">
+	<title>Carrito</title>
+</head>
+<body>
+	<div class="container-fluid">
+			
+
+ <div class="deseos">
+
+<section class="row justify-content-between">
+
+
+        <div class="col-sm-12 col-lg-4 pb-4">
+        <div class="card text-center">
+            <div class="card-header color21"><h2>REEBOK</h2></div>
+            <img src="img/Mujer/4.jpg">
+            
+
+<form action="">
+  <div class="card-body">
+        <div class="row">
+        <div class="col-lg-4">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="t" placeholder="talla" list="talla" required>
+        <datalist id="talla">
+           
+           <option >35</option>
+           <option disabled value="2">37</option>
+           <option >40</option>
+           <option >45</option>
+        </datalist>
+        </div></div>
+
+        <div class="col-lg-4">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="n" placeholder="cantidad" list="cantidad" required>
+        <datalist id="cantidad">
+           
+           <option >1</option>
+           <option >2</option>
+           <option disabled value="3">3</option>
+           <option disabled value="4">4</option>
+           <option disabled value="5">5</option>
+        </datalist>
+        </div></div>
+
+        <div class="col-lg-4">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="c" placeholder="color" list="color" required>
+        <datalist id="color">
+           
+           <option >Amarillo</option>
+           <option disabled value="2">Gris</option>
+           <option >Rojo</option>
+           <option >Negro</option>
+           <option >Blanco</option>
+        </datalist>
+        
+        </div> 
+          </div></div>
+
+    <div class="row p-3">
+  <a class="card-link mb-2 col-12 btn btn-success" data-toggle="modal" data-target="#agenda">Comprar</a>
+    </div>
+
+  </div>
+  </form>
+ 
+    <div class="card-footer border-info">
+    <h3><strong>$60.000 c/u</strong></h3></div>
+
+</div>
+</div>
+
+
+<div id="info" class="col-lg-8 col-sm-12 text-center mb-2 bg-light"><h1>Descripción de producto</h1>
+<p class="jumbotron color15 m-5 border border-info">Zapatillas color blanco marca Reebok</p>
+<p class="jumbotron color15 m-5 border border-info">Material cuero blanco, cosidos a mano</p>
+<p class="jumbotron color15 m-5 border border-info">
+  <img id="planchar" src="img/1.png">
+  <img id="mano" src="img/2.png">
+  <img id="cloro" src="img/3.png">
+</p>
+</div>
+
+</section>
+</div>
+      
+</div>
+    	
+
+<div class="modal fade" id="agenda">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!--Encabezado -->
+      <div class="modal-header">
+        <h4>Advertencia</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!--Contenido -body- -->
+      <div class="modal-body">
+        <form method="POST" th:action="@{/carCliente}" class="formulario">
+  <div class="form-row">
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Nombre" name="nombre" required="" pattern="[a-z A-Z]+">
+    </div>
+    <div class="col pb-3">
+      <input type="text" class="form-control" placeholder="Apellido" name="apellido" required="" pattern="[a-z A-Z]+">
+    </div>
+  </div>
+<div class="form-group">
+    <input type="text" class="form-control" id="direccion1" placeholder="Dirección"name="direccion" required="">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="direccion2" placeholder="Casa, Apartamento, piso" name="descripcion" required="">
+  </div>
+   <div class="form-row">
+<div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="localidad" placeholder="localidad" list="localidad" required>
+      <datalist id="localidad">
+        <option selected>Escoge tu localidad</option>
+        <option>Usaquén</option>
+        <option>Chapinero</option>
+        <option>Santa Fé</option>
+        <option>San Cristóbal</option>
+        <option>Usme</option>
+        <option>Tunjuelito</option>
+        <option>Bosa</option>
+        <option>Kennedy</option>
+        <option>Fontibón</option>
+        <option>Engativá</option>
+        <option>Suba</option>
+        <option>Barrios Unidos</option>
+        <option>Teusaquillo</option>
+        <option>Los Martires</option>
+        <option>Antonio Nariño</option>
+        <option>Puente Aranda</option>
+        <option>Candelaria</option>
+        <option>Rafael Uribe Uribe</option>
+        <option>Ciudad Bolivar</option>
+        <option>Sumapaz</option>
+
+      </datalist>
+    </div></div>
+    <div id="validation" class="invalid-feedback">
+        Por favor seleccione una localidad.
+      </div>
+    <div class="form-group col-md-6 col-lg-6">
+      <input type="text" class="form-control" id="barrio" placeholder="Barrio" name="barrio" required="">
+    </div></div>
+
+    <div class="form-row">
+    <div class="col-lg-6 col-sm-6 pb-3">
+      <input type="text" class="form-control" placeholder="Teléfono" name="telefono" maxlength="10" required="">
+    </div>
+    <div class="col-sm-6 col-lg-6 pb-3">
+      <input type="email" class="form-control" placeholder="E-mail" name="mail" required="">
+    </div>
+    <div id="validation" class="invalid-feedback">
+        Use un correo valido.
+      </div>
+  </div>
+
+  <div class="form-row">
+<div class="col-lg-6">
+                     <div class="form-group" id="gen-group">
+                    <input class="form-control" type="text" name="tipo" placeholder="Tipo de Identificacion" list="Identificacion" required>
+                    <datalist id="Identificacion">
+                    <option >Cedula</option>
+                    <option disabled >Tarjeta de Indentidad</option>
+                    <option >Cedula Extranjera</option>
+                    <option >Pasaporte</option>
+                     </datalist>
+                    </div></div>
+
+<div class="form-group col-lg-6 col-sm-6">
+      <input type="text" class="form-control" name="id" placeholder="Numero de identificaión" maxlength="11" required="">
+    </div>
+
+</div>
+
+<div class="form-group-row">
+  <div class="col-lg-12 col-sm-12">
+  <input class="form-check-input" type="checkbox" value=""  >
+  <label class="form-check-label pb-2">
+  Autorizo a Sistema de información NERV para que lleve a cabo el Tratamiento de mis datos personales de conformidad con la Política de Privacidad. Confirmo que he leído y acepto el Aviso de Privacidad y la Política de Tratamiento de Datos Personales de NERV. Al marcar esta casilla autorizo el tratamiento de mis datos personales y confirmo que soy mayor de edad.</label>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-primary col-12" data-toggle="modal" data-target="#aviso">Enviar</button>
+<span>Los pagos se hacen contra entrega*</span>
+
+</form>
+      </div>
+      <!--Pie modal -footer- -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="modal" id="aviso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-dark">
+            <h4>¡GRACIAS POR TU COMPRA!</h4>
+            <button type="button" class="close" data-dismiss="modal">&Otimes;</button>
+          </div>
+
+          <div class="modal-body">
+          <p>
+          Tu orden fue recibida exitosamente. Recibirás un email de confirmación de tu pedido</p>
+          <p>
+          Información importante:
+          Una vez nos pagues a contra entrega nosotros te entregaremos tu pedido para validar el estado de tus productos</p>
+          </div>
+          
+          <div class="modal-footer">
+            <span><p>Serás notificado via email la infomación del pedido como la fecha y confirmación de disponibilidad de los productos*</p></span>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="css/bootstrap.bundle.min.js"></script>
+	<script src="js/popper.min.js"></script>
+</body>
+</html>
